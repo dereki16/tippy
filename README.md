@@ -32,7 +32,7 @@ GIF created with [recordit](https://recordit.co/hp6IVmuIS9).
 
 ## Notes
 
-The settings view controller was easier to set up programatically, I had trouble doing so via the storyboard. The custom tip and total wouldn't update automatically, and the slider would return back to its original value of 15 after going back to settings.
+The settings view controller was easier to set up programatically, I had trouble doing so via the storyboard. The custom tip and total wouldn't update automatically, and the slider would return back to its original value of 15 after going back to settings. The only problem I couldn't get to is if the user hits custom before going to settings and hitting done, the app crashes.
 
 ## License
 
