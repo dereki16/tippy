@@ -14,44 +14,36 @@ protocol FullSend {
 
 class SettingsViewController: UIViewController {
     
-    var delegate:FullSend!
+    var delegate:FullSend?
     var data = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let value = UserDefaults.standard.integer(forKey: "slider")
+        slider.value = Float(value)
         self.title = "Settings"
-        adjustedTipLabel.text = data
+        adjustedTipLabel.text = String(Int(slider.value))
 
         // Do any additional setup after loading the view.
     }
     
-        
     @IBOutlet weak var adjustedTipLabel: UILabel!
     
     @IBOutlet weak var slider: UISlider!
     
     @IBAction func tipSlider(_ sender: UISlider) {
-        adjustedTipLabel.text = String(Int(slider.value)) + "%"
+        adjustedTipLabel.text = String(Int(slider.value))
 
-        print(Int(slider.value))
-        
-        
+        UserDefaults.standard.set(Int(slider.value), forKey: "slider")
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func doneButton(_ sender: Any) {
-//        performSegue(withIdentifier: "settings", sender: self)
         delegate?.sendItBack(str: adjustedTipLabel.text!)
-//        dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
         
         print(adjustedTipLabel.text!)
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! ViewController
-//        vc.alteredTip = self.customTip
-//    }
     
     
 
