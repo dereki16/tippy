@@ -31,6 +31,8 @@ class ViewController: UIViewController, FullSend {
     
     @IBOutlet weak var billField: UITextField!
     
+    
+    
     @IBOutlet weak var tipControl: UISegmentedControl! {
         didSet{
             self.tipControl.addTarget(self, action: #selector(indexCheck), for: .valueChanged)
@@ -57,6 +59,9 @@ class ViewController: UIViewController, FullSend {
         // Do any additional setup after loading the view.
         self.title = "Tip Calculator"
         tipAmount.text = "15"
+        
+        let value = UserDefaults.standard.string(forKey: "bill")
+        billField.text = value
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -87,6 +92,9 @@ class ViewController: UIViewController, FullSend {
         // update tip and total labels
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        UserDefaults.standard.set(String(billField.text!), forKey: "bill")
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func onClickSettings(_ sender: Any) {
