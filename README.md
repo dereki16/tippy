@@ -28,15 +28,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
 GIF created with [recordit](https://recordit.co/hp6IVmuIS9).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
-The settings view controller was easier to set up programatically, I had trouble doing so via the storyboard.
-The custom tip and total wouldn't update automatically, and the slider would return back to its original value of 15 after going back to settings.
+The settings view controller was easier to set up programatically, I had trouble doing so via the storyboard. The custom tip and total wouldn't update automatically, and the slider would return back to its original value of 15 after going back to settings.
 
 ## License
 
